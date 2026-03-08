@@ -100,7 +100,7 @@ a{
   display:flex;
   justify-content:center;
   align-items:center;
-  padding:70px;px 20px;
+  padding:70px 20px;
 }
 
 .logoBar img{
@@ -109,6 +109,15 @@ a{
   max-height:90px;
 }
 
+@media (max-width: 640px){
+  .logoBar{
+    padding:40px 12px;
+  }
+
+  .logoBar img{
+    max-height:58px;
+  }
+}
 /* =========================
    NAVBAR PRINCIPAL
 ========================= */
@@ -157,7 +166,6 @@ a{
 .menu a,
 .menu button,
 .menu .menuBtnLink{
-  position:relative;
   background:none;
   border:none;
   color:#fff;
@@ -978,3 +986,4 @@ footer p{
     letter-spacing:2px;
   }
 }
+
