@@ -1,0 +1,894 @@
+/* ==========================================================
+   DOCUMENTACIÓN DEL ESTILO VISUAL - ENFOQUE SDLC
+   Sistema: Sitio web institucional y comercial Grupo Multicolor
+   Archivo: style.css
+
+   Propósito:
+   Definir la presentación visual, estructura responsive e interacción
+   visual del sistema web de Grupo Multicolor.
+
+   Alcance del archivo:
+   - Reset general
+   - Barra superior promocional
+   - Franja de logotipo
+   - Menú principal
+   - Hero principal
+   - Sección comercial "¿Por qué nosotros?"
+   - Tarjetas de Misión / Visión / Valores
+   - Sección Historia
+   - Footer
+   - Botón flotante de WhatsApp
+   - Overlays de Catálogos y Ubicaciones
+   - Responsive design para tablet y móvil
+
+   Consideraciones SDLC:
+   1. Planeación:
+      Se definió una interfaz limpia, comercial y responsive.
+   2. Diseño:
+      Se estableció identidad visual sobria con acento bugambilia.
+   3. Desarrollo:
+      Se implementó CSS modular por secciones.
+   4. Pruebas:
+      Se validó comportamiento visual en escritorio, tablet y móvil.
+   5. Mantenimiento:
+      Este archivo permite ajustar colores, espaciados y layout sin tocar HTML.
+========================================================== */
+
+
+/* ==========================================================
+   RESET GLOBAL
+   Normaliza márgenes, padding y modelo de caja
+========================================================== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  overflow-x:hidden;
+}
+
+body{
+  width:100%;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#ffffff;
+  color:#111;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+
+/* ==========================================================
+   TOP BAR ENVÍO
+   Barra superior promocional para mensajes comerciales
+========================================================== */
+.topbar{
+  background:#3a3a3a;
+  color:#fff;
+  text-align:center;
+  padding:10px 15px;
+  font-size:14px;
+  line-height:1.4;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.topbar p{
+  margin:0;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+
+/* ==========================================================
+   LOGO BAR
+   Franja dedicada a la identidad visual de la marca
+========================================================== */
+.logoBar{
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:35px 20px;
+}
+
+.logoBar img{
+  width:auto;
+  max-width:100%;
+  max-height:90px;
+}
+
+
+/* ==========================================================
+   NAVBAR PRINCIPAL
+   Barra de navegación sticky con enlaces internos y botones
+========================================================== */
+.mainHeader{
+  background:#3a3a3a;
+  border-bottom:1px solid rgba(255,255,255,.1);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+
+.nav{
+  width:min(1200px, 94%);
+  margin:auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:52px;
+}
+
+.menu{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:14px 18px;
+  padding:10px 0;
+}
+
+.menu a,
+.menu button{
+  position:relative;
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:.5px;
+  cursor:pointer;
+  padding:6px 0;
+  text-transform:uppercase;
+  font-family:inherit;
+  white-space:nowrap;
+}
+
+/* Línea inferior animada para hover y estado activo */
+.menu a::after,
+.menu button::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:#fff;
+  transition:width .25s ease;
+}
+
+.menu a:hover::after,
+.menu button:hover::after,
+.menu .active::after{
+  width:100%;
+}
+
+.menuBtnLink{
+  background:none;
+  border:none;
+  font:inherit;
+  color:inherit;
+  cursor:pointer;
+}
+
+
+/* ==========================================================
+   HERO
+   Sección principal de bienvenida y propuesta comercial
+========================================================== */
+.hero{
+  width:min(1200px, 92%);
+  margin:0 auto;
+  text-align:center;
+  padding:56px 0 28px;
+}
+
+.hero h1{
+  font-size:clamp(30px, 8vw, 48px);
+  line-height:1.2;
+  margin-bottom:14px;
+  padding:0 8px;
+  color:#c2185b;
+}
+
+.hero p{
+  max-width:680px;
+  margin:0 auto 10px;
+  padding:0 10px;
+  color:#555;
+  font-size:15px;
+  line-height:1.7;
+}
+
+
+/* ==========================================================
+   SECCIÓN "POR QUÉ NOSOTROS"
+   Bloque comercial con argumentos de valor
+========================================================== */
+.porque{
+  width:min(1200px, 92%);
+  margin:28px auto 40px;
+  text-align:center;
+}
+
+.porque h2{
+  font-size:clamp(28px, 6vw, 42px);
+  margin-bottom:32px;
+  line-height:1.2;
+  color:#111;
+}
+
+.porqueGrid{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:24px;
+}
+
+.porqueCard{
+  padding:16px 10px;
+  transition:transform .3s ease;
+}
+
+.porqueCard:hover{
+  transform:translateY(-6px);
+}
+
+.porqueIcon{
+  width:48px;
+  height:48px;
+  margin:0 auto 14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  color:#c2185b;
+  border:2px solid #c2185b;
+  border-radius:12px;
+}
+
+.porqueCard h3{
+  font-size:16px;
+  line-height:1.4;
+  margin-bottom:10px;
+}
+
+.porqueCard p{
+  max-width:180px;
+  margin:0 auto;
+  font-size:14px;
+  line-height:1.6;
+  color:#555;
+}
+
+
+/* ==========================================================
+   MISIÓN / VISIÓN / VALORES
+   Tarjetas institucionales
+========================================================== */
+.misionvision{
+  width:min(1200px, 92%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:22px;
+  padding:20px 0 48px;
+}
+
+.box{
+  background:#fff;
+  border-radius:18px;
+  padding:20px 18px 22px;
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.box:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+
+/* Título tipo bloque/pastilla de ancho completo */
+.cardTitle{
+  display:block;
+  width:100%;
+  background:#efefef;
+  padding:12px 10px;
+  border-radius:12px;
+  text-align:center;
+  font-size:16px;
+  font-weight:700;
+  color:#111;
+  margin-bottom:12px;
+}
+
+/* Estrellas decorativas */
+.cardStars{
+  color:#f5b301 !important;
+  font-size:22px;
+  letter-spacing:4px;
+  text-align:center;
+  margin:8px 0 10px;
+}
+
+/* Separador doble */
+.cardLines{
+  width:72%;
+  height:8px;
+  margin:0 auto 18px;
+  position:relative;
+}
+
+.cardLines::before,
+.cardLines::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  height:2px;
+  background:#e6e6e6;
+}
+
+.cardLines::before{
+  top:0;
+}
+
+.cardLines::after{
+  top:5px;
+}
+
+.box p,
+.box li{
+  font-size:14px;
+  line-height:1.9;
+  color:#555;
+}
+
+.box ul{
+  margin-left:18px;
+}
+
+.box li{
+  margin:5px 0;
+}
+
+
+/* ==========================================================
+   HISTORIA
+   Layout de texto institucional + video
+========================================================== */
+.historia{
+  width:min(1200px, 92%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:30px;
+  align-items:start;
+  padding:8px 0 60px;
+}
+
+.historia .texto h2{
+  font-size:clamp(28px, 5vw, 40px);
+  margin-bottom:16px;
+  line-height:1.2;
+}
+
+.historia .texto p{
+  font-size:15px;
+  line-height:1.9;
+  color:#555;
+  margin-bottom:10px;
+}
+
+.video{
+  display:flex;
+  justify-content:center;
+}
+
+.video video{
+  width:100%;
+  max-width:360px;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,.18);
+  background:#000;
+}
+
+
+/* ==========================================================
+   OCULTAR SECCIONES AUXILIARES
+   Se mantienen en HTML pero no se muestran
+========================================================== */
+#catalogos,
+#ubicaciones{
+  display:none !important;
+}
+
+
+/* ==========================================================
+   FOOTER
+   Bloque final con redes y derechos del sitio
+========================================================== */
+footer{
+  background:#f7f7f0;
+  border-top:1px solid rgba(0,0,0,.1);
+  padding:24px 12px;
+}
+
+footer .redes{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin-bottom:10px;
+  flex-wrap:wrap;
+}
+
+footer img{
+  width:28px;
+  height:28px;
+  border-radius:8px;
+}
+
+footer p{
+  text-align:center;
+  font-size:13px;
+  color:#777;
+}
+
+
+/* ==========================================================
+   BOTÓN FLOTANTE DE WHATSAPP
+   Acceso rápido a canal de contacto
+========================================================== */
+.whatsapp-float{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:64px;
+  height:64px;
+  background:#25D366;
+  border-radius:50%;
+  border:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 22px rgba(0,0,0,.25);
+  z-index:9999;
+}
+
+.whatsapp-float svg{
+  width:30px;
+  height:30px;
+  fill:#ffffff;
+}
+
+
+/* ==========================================================
+   OVERLAYS
+   Ventanas modales de catálogos y ubicaciones
+========================================================== */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  display:none;
+  z-index:9999;
+}
+
+.overlay.open{
+  display:grid;
+  place-items:center;
+}
+
+.overlay__sheet{
+  width:min(1100px, 95vw);
+  height:min(82vh, 760px);
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  display:grid;
+  grid-template-rows:auto 1fr;
+  box-shadow:0 25px 60px rgba(0,0,0,.25);
+}
+
+.overlay__top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding:14px 16px;
+  border-bottom:1px solid rgba(0,0,0,.1);
+}
+
+.overlay__title{
+  font-size:18px;
+}
+
+.overlay__subtitle{
+  font-size:13px;
+  color:#777;
+}
+
+.overlay__actions{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+.overlay__search{
+  width:min(320px, 42vw);
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.15);
+  outline:none;
+}
+
+.iconClose{
+  width:42px;
+  height:42px;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,.15);
+  background:#fff;
+  cursor:pointer;
+}
+
+.overlay__content{
+  padding:18px;
+  overflow:auto;
+  background:#f6f7fb;
+}
+
+
+/* ==========================================================
+   CATÁLOGOS GRID
+   Tarjetas de catálogos dentro del overlay
+========================================================== */
+.catalogGrid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:16px;
+}
+
+.catalogCard{
+  background:#fff;
+  border-radius:16px;
+  padding:12px;
+  display:grid;
+  grid-template-columns:56px 1fr;
+  gap:10px;
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+}
+
+.catalogCard__thumb{
+  width:54px;
+  height:54px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  background:#f2f2f2;
+  font-size:22px;
+}
+
+.catalogCard__body h3{
+  font-size:14px;
+  margin-bottom:4px;
+}
+
+.catalogCard__body p{
+  font-size:12px;
+  color:#777;
+  margin-bottom:10px;
+}
+
+.catalogCard__buttons{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.btnSmall{
+  padding:8px 10px;
+  border-radius:12px;
+  font-size:12px;
+  font-weight:700;
+  border:1px solid rgba(0,0,0,.12);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.btnSmall--ghost{
+  background:#fff;
+  color:#111;
+}
+
+.btnSmall--wa{
+  background:#25D366;
+  color:#fff;
+  border:none;
+}
+
+
+/* ==========================================================
+   UBICACIONES
+   Tarjetas de sucursales
+========================================================== */
+.locGrid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:14px;
+}
+
+.locCard{
+  background:#fff;
+  border-radius:16px;
+  padding:16px;
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+}
+
+.locCard h3{
+  margin-bottom:6px;
+}
+
+.locCard p{
+  font-size:13px;
+  color:#666;
+  margin-bottom:10px;
+}
+
+
+/* ==========================================================
+   RESPONSIVE - TABLET
+========================================================== */
+@media (max-width: 980px){
+  .logoBar img{
+    max-height:64px;
+  }
+
+  .menu{
+    gap:12px 16px;
+  }
+
+  .hero{
+    padding:48px 0 24px;
+  }
+
+  .porqueGrid{
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    gap:26px 18px;
+  }
+
+  .misionvision{
+    grid-template-columns:1fr;
+  }
+
+  .historia{
+    grid-template-columns:1fr;
+    gap:26px;
+  }
+
+  .catalogGrid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+
+  .locGrid{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* ==========================================================
+   RESPONSIVE - MOBILE
+========================================================== */
+@media (max-width: 640px){
+  .topbar{
+    font-size:12px;
+    padding:8px 10px;
+  }
+
+  .logoBar{
+    padding:10px 12px;
+  }
+
+  .logoBar img{
+    max-height:58px;
+  }
+
+  .mainHeader{
+    position:relative;
+  }
+
+  .nav{
+    width:94%;
+  }
+
+  .menu{
+    gap:10px 14px;
+    padding:10px 0 12px;
+  }
+
+  .menu a,
+  .menu button{
+    font-size:12px;
+  }
+
+  .hero{
+    padding:42px 0 22px;
+  }
+
+  .hero h1{
+    font-size:clamp(28px, 9vw, 38px);
+    padding:0 4px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .porque{
+    margin:22px auto 34px;
+  }
+
+  .porque h2{
+    margin-bottom:24px;
+  }
+
+  .porqueGrid{
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    gap:22px 12px;
+  }
+
+  .porqueCard{
+    padding:10px 4px;
+  }
+
+  .porqueIcon{
+    width:46px;
+    height:46px;
+    font-size:20px;
+    margin-bottom:12px;
+  }
+
+  .porqueCard h3{
+    font-size:15px;
+  }
+
+  .porqueCard p{
+    font-size:13px;
+    max-width:150px;
+  }
+
+  .box{
+    padding:18px 16px 20px;
+  }
+
+  .cardTitle{
+    font-size:15px;
+    padding:11px 8px;
+  }
+
+  .cardStars{
+    font-size:20px;
+    letter-spacing:3px;
+  }
+
+  .cardLines{
+    width:78%;
+  }
+
+  .box p,
+  .box li{
+    font-size:13px;
+    line-height:1.8;
+  }
+
+  .historia .texto h2{
+    font-size:30px;
+  }
+
+  .historia .texto p{
+    font-size:14px;
+    line-height:1.8;
+  }
+
+  .video video{
+    max-width:320px;
+  }
+
+  .overlay__top{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .overlay__actions{
+    width:100%;
+  }
+
+  .overlay__search{
+    width:100%;
+  }
+
+  .catalogGrid{
+    grid-template-columns:1fr;
+  }
+
+  .whatsapp-float{
+    width:64px;
+    height:64px;
+    right:14px;
+    bottom:14px;
+  }
+
+  .whatsapp-float svg{
+    width:26px;
+    height:26px;
+  }
+}
+
+
+/* ==========================================================
+   RESPONSIVE - SMALL MOBILE
+========================================================== */
+@media (max-width: 420px){
+  .topbar{
+    font-size:11px;
+  }
+
+  .logoBar img{
+    max-height:52px;
+  }
+
+  .menu{
+    gap:10px 12px;
+  }
+
+  .menu a,
+  .menu button{
+    font-size:11px;
+  }
+
+  .hero{
+    padding:34px 0 18px;
+  }
+
+  .hero h1{
+    font-size:clamp(26px, 10vw, 34px);
+  }
+
+  .hero p{
+    font-size:13px;
+  }
+
+  .porqueGrid{
+    grid-template-columns:1fr 1fr;
+    gap:18px 10px;
+  }
+
+  .porqueCard h3{
+    font-size:14px;
+  }
+
+  .porqueCard p{
+    font-size:12px;
+    max-width:130px;
+  }
+
+  .cardTitle{
+    font-size:14px;
+  }
+
+  .cardStars{
+    font-size:18px;
+    letter-spacing:2px;
+  }
+}

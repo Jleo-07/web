@@ -1,0 +1,882 @@
+<!--
+==========================================================
+DOCUMENTACIÓN DE LA P[AGINA WEB - ENFOQUE SDLC
+==========================================================
+
+Nombre del sistema:
+Sitio web insttitucional y comercial de Grupo Multicolor
+
+Versión:
+1.0
+
+Descripción general:
+Este sistema corresponde al desarrollo de una página web institucional y comercial
+para Grupo Multicolor, empresa dedicada a la venta de estambres, mercería,
+papelería, artículos para calzado y artículos para fiesta.
+
+Objetivo del sistema:
+Brindar una plataforma digital moderna, visual y funcional que permita:
+- Presentar la identidad de la empresa.
+- Mostrar información institucional.
+- Facilitar la consulta de catálogos de productos.
+- Mostrar ubicaciones físicas de sucursales.
+- Mejorar el contacto comercial a través de WhatsApp y redes sociales.
+
+Alcance del sistema:
+El sistema incluye las siguientes funcionalidades:
+1. Barra superior informativa con promociones o condiciones de envío.
+2. Franja de identidad visual con logotipo corporativo.
+3. Menú de navegación principal.
+4. Sección principal de bienvenida (Hero).
+5. Sección comercial "¿Por qué nosotros?".
+6. Sección institucional con Misión, Visión y Valores.
+7. Sección de Historia corporativa con video institucional.
+8. Overlay de Catálogos con buscador dinámico.
+9. Overlay de Ubicaciones con enlaces a Google Maps.
+10. Footer con enlaces a redes sociales.
+11. Botón flotante de WhatsApp para contacto inmediato.
+
+Usuarios objetivo:
+- Clientes actuales
+- Nuevos clientes potenciales
+- Distribuidores
+- Público general interesado en productos de mercería y estambres
+
+Tecnologías utilizadas:
+- HTML5: estructura semántica del contenido
+- CSS3: diseño visual, animaciones y responsive design
+- JavaScript: interacciones dinámicas, overlays y buscador de catálogos
+
+Módulos de la pagina]:
+- Módulo de navegación
+- Módulo de presentación comercial
+- Módulo institucional
+- Módulo multimedia
+- Módulo de catálogos
+- Módulo de ubicaciones
+- Módulo de contacto rápido
+- Módulo de redes sociales
+
+Fases SDLC aplicadas:
+1. Planeación:
+   Definición de objetivos, público meta y funcionalidades principales.
+2. Análisis:
+   Identificación de necesidades comerciales, visuales e institucionales.
+3. Diseño:
+   Propuesta de interfaz, estructura de navegación y experiencia de usuario.
+4. Desarrollo:
+   Implementación del sistema con HTML, CSS y JavaScript.
+5. Pruebas:
+   Validación de overlays, navegación, enlaces, responsive design y buscador.
+6. Implementación:
+   Publicación del sistema en entorno web.
+7. Mantenimiento:
+   Actualización de catálogos, promociones, sucursales, horarios y contenido.
+
+Consideraciones funcionales:
+- El botón "Catálogos" abre una interfaz tipo app con buscador.
+- El botón "Ubicaciones" muestra sucursales disponibles con acceso a mapas.
+- Los enlaces del menú permiten navegación interna por secciones.
+- El sistema es responsive para escritorio, tablet y móvil.
+
+Observaciones:
+- Los catálogos 32 y 33 contienen placeholders y deben completarse.
+- El sistema puede ser escalado a e-commerce en una versión futura.
+
+Responsable:
+[Agregar nombre del desarrollador o equipo]
+
+Fecha:
+[Agregar fecha de entrega]
+
+==========================================================
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ======================================================
+       CONFIGURACIÓN GENERAL DEL DOCUMENTO
+  ======================================================= -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupo Multicolor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ======================================================
+     CABECERA GENERAL DEL SISTEMA
+     Incluye:
+     - Barra promocional superior
+     - Logotipo
+     - Menú principal
+====================================================== -->
+<header>
+
+  <!-- =========================
+       TOP BAR ENVÍO
+  ========================= -->
+  <div class="topbar">
+    <p>PRECIOS ESPECIALES en la compra mínima de $1000</p>
+  </div>
+
+  <!-- =========================
+       LOGO BAR
+  ========================= -->
+  <div class="logoBar">
+    <img src="LOGO.png" alt="Grupo Multicolor">
+  </div>
+
+  <!-- =========================
+       NAVBAR PRINCIPAL
+       Navegación interna y botones de overlays
+  ========================= -->
+  <header class="mainHeader">
+    <div class="nav">
+      <nav class="menu">
+        <a href="#inicio" class="active">Inicio</a>
+        <button class="menuBtnLink" id="openCatalogos" type="button">Catálogos</button>
+        <button class="menuBtnLink" id="openUbicaciones" type="button">Ubicaciones</button>
+        <a href="#mision">Misión</a>
+        <a href="#vision">Visión</a>
+        <a href="#valores">Valores</a>
+        <a href="#historia">Historia</a>
+      </nav>
+    </div>
+  </header>
+</header>
+
+<!-- ======================================================
+     HERO SECTION
+     Sección principal de presentación comercial
+====================================================== -->
+<section class="hero" id="inicio">
+  <h1>Todo para tejer, crear y diseñar.</h1>
+  <p>Estambres, mercería con estilo, artículos para calzado y artículos para fiestas.</p>
+  <p>Explora nuestros catálogos o visita nuestras tiendas.</p>
+</section>
+
+<!-- ======================================================
+     SECCIÓN COMERCIAL
+     Razones de valor de la empresa
+====================================================== -->
+<section class="porque">
+  <h2>¿Por qué nosotros?</h2>
+
+  <div class="porqueGrid">
+    <div class="porqueCard">
+      <div class="porqueIcon">❤</div>
+      <h3>Cercanos a ti</h3>
+      <p>Atención personalizada y asesoría para cada cliente.</p>
+    </div>
+
+    <div class="porqueCard">
+      <div class="porqueIcon">👤</div>
+      <h3>Diseños únicos</h3>
+      <p>Productos pensados para crear proyectos especiales.</p>
+    </div>
+
+    <div class="porqueCard">
+      <div class="porqueIcon">🏭</div>
+      <h3>Excelentes precios</h3>
+      <p>Mejores precios en estambres y mercería.</p>
+    </div>
+
+    <div class="porqueCard">
+      <div class="porqueIcon">✔</div>
+      <h3>Calidad garantizada</h3>
+      <p>Trabajamos con productos de excelente calidad.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     SECCIÓN INSTITUCIONAL
+     Misión, Visión y Valores
+====================================================== -->
+<section class="misionvision">
+
+  <div class="box" id="mision">
+    <div class="cardTitle">Misión</div>
+    <div class="cardStars">★★★★★</div>
+    <div class="cardLines"></div>
+
+    <p>
+      Buscamos transmitir a las nuevas generaciones el gusto por el bordado,
+      el tejido artesanal y las manualidades a través de nuestros productos.
+    </p>
+
+    <p>
+      Somos una empresa 100% oaxaqueña dedicada a comercializar productos de
+      mercería, estambres, papelería, artículos para calzado y artículos para fiesta.
+    </p>
+  </div>
+
+  <div class="box" id="vision">
+    <div class="cardTitle">Visión</div>
+    <div class="cardStars">★★★★★</div>
+    <div class="cardLines"></div>
+
+    <p>
+      Ser la empresa líder en la distribución de productos de mercería,
+      estambres, papelería y artículos para fiesta a nivel estatal y nacional.
+    </p>
+
+    <p>
+      Ser reconocidos por nuestra atención personalizada generando empleos
+      competitivos y formando líderes con valores.
+    </p>
+  </div>
+
+  <div class="box" id="valores">
+    <div class="cardTitle">Valores</div>
+    <div class="cardStars">★★★★★</div>
+    <div class="cardLines"></div>
+
+    <ul>
+      <li>Honestidad</li>
+      <li>Resiliencia</li>
+      <li>Respeto</li>
+      <li>Competitividad</li>
+      <li>Trabajo en equipo</li>
+      <li>Calidad humana</li>
+    </ul>
+  </div>
+
+</section>
+
+<!-- ======================================================
+     HISTORIA CORPORATIVA
+     Incluye texto institucional y recurso multimedia
+====================================================== -->
+<section class="historia" id="historia">
+  <div class="texto">
+    <h2>Nuestra Historia</h2>
+    <p>
+      Desde el corazón de Oaxaca nació un sueño lleno de color, Grupo Multicolor,
+      una empresa 100% oaxaqueña con más de 20 años de experiencia en el mercado,
+      dedicada a llevar hasta tus manos la mejor calidad en hilos para bordar, para
+      tejer y artículos de mercería. Cada hebra, cada tono, cuenta la pasión por
+      nuestro trabajo.
+    </p>
+    <p>
+      Gracias por confiar en nosotros, por ser parte de esta gran familia que día a
+      día crece y se fortalece. Hoy, con orgullo, distribuimos a toda la República
+      Mexicana, llevando nuestros productos a cada rincón del país.
+    </p>
+    <p>
+      Porque en Grupo Multicolor tejemos más que hilos, tejemos sueños. Nuestro
+      compromiso es con la calidad y el servicio. Por eso, trabajamos cada día para
+      ofrecerte una amplia variedad de productos, atendiendo con calidad y
+      profesionalismo a clientes desde pequeños negocios hasta grandes proyectos.
+    </p>
+    <p>
+      Sabemos que detrás de cada madeja hay una historia y nos enorgullece ser parte
+      de la tuya.
+    </p>
+  </div>
+
+  <iframe 
+    src="https://drive.google.com/file/d/1LXDbBpZaDxNMFZXXMYZH7SyhXI7Ro3Zg/preview"
+    width="360" 
+    height="640" 
+    allow="autoplay">
+  </iframe>
+  </div>
+</section>
+
+<!-- ======================================================
+     PIE DE PÁGINA
+     Redes sociales y derechos del sitio
+====================================================== -->
+<footer>
+  <div class="redes">
+    <a href="https://www.facebook.com/GrupoMultiicolor" target="_blank" rel="noopener">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+    </a>
+
+    <a href="https://www.instagram.com/grupo_multicolor" target="_blank" rel="noopener">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+    </a>
+
+    <a href="https://www.tiktok.com/@grupo.multicolor" target="_blank" rel="noopener">
+      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok">
+    </a>
+  </div>
+
+  <p>© 2026 Grupo Multicolor</p>
+</footer>
+
+<!-- ======================================================
+     BOTÓN FLOTANTE DE WHATSAPP
+     Acceso directo a contacto comercial
+====================================================== -->
+<a class="whatsapp-float"
+   href="https://wa.me/529512871251"
+   target="_blank"
+   rel="noopener"
+   aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24">
+    <path d="M20.52 3.48A11.91 11.91 0 0 0 12.05 0C5.47 0 .11 5.36.11 11.94c0 2.1.55 4.16 1.6 5.98L0 24l6.25-1.64a11.9 11.9 0 0 0 5.8 1.48h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.48-8.42zM12.06 21.7h-.01a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.71.97.99-3.62-.23-.37a9.77 9.77 0 0 1-1.49-5.17c0-5.41 4.4-9.81 9.82-9.81 2.62 0 5.08 1.02 6.93 2.87a9.73 9.73 0 0 1 2.87 6.94c0 5.41-4.41 9.81-9.82 9.81zm5.43-7.36c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.46-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.46s1.06 2.85 1.21 3.05c.15.2 2.08 3.17 5.04 4.45.7.3 1.24.48 1.67.62.7.22 1.34.19 1.84.12.56-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.13-.27-.2-.56-.35z"/>
+  </svg>
+</a>
+
+<!-- ======================================================
+     OVERLAY DE CATÁLOGOS
+     Módulo interactivo con buscador y enlaces de compra
+====================================================== -->
+<div class="overlay" id="overlayCatalogos" aria-hidden="true">
+  <div class="overlay__sheet" role="dialog" aria-modal="true" aria-label="Catálogos">
+    <header class="overlay__top">
+      <div>
+        <h2 class="overlay__title">Catálogos</h2>
+        <p class="overlay__subtitle">Elige un catálogo y compra por WhatsApp</p>
+      </div>
+
+      <div class="overlay__actions">
+        <input class="overlay__search" id="searchCatalogos" type="search" placeholder="Buscar catálogo..." />
+        <button class="iconClose" id="closeCatalogos" aria-label="Cerrar">✕</button>
+      </div>
+    </header>
+
+    <div class="overlay__content">
+      <div class="catalogGrid" id="catalogGrid">
+
+        <!-- Catálogos de productos -->
+        <!-- Se conserva estructura individual para búsqueda y mantenimiento -->
+
+        <article class="catalogCard" data-name="Mega Cristal">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Mega Cristal</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/XtNPGCZ6i2z2t4XV7" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Mega%20Cristal">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Cristal Liso Jumbo">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Cristal Liso Jumbo</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/CWf3bDf4Xy2aBqo2A" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Cristal%20Liso%20Jumbo">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Cristal Liso">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Cristal Liso</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/4LTR3ViHevhDTyXZ8" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Cristal%20Liso">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Cristalito Liso">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Cristalito Liso</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/MkzuxoP15uYvPtFy9" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Cristalito%20Liso">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Cristal Matizado">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Cristal Matizado</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/kpS5crn9hmUVTdLK6" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Cristal%20Matizado">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Cristal Metálico">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Cristal Metálico</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/LfuifFDY9iEz9Z5y7" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Cristal%20Metálico">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="3 Hebras">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>3 Hebras</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/6zA5u9D8MWtnQrjk9" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%203%20Hebras">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Cajas de Cristalito y 3 Hebras Mini">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Cajas de Cristalito y 3 Hebras Mini</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/UexEDU1v8BHMyME77" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Cajas%20de%20Cristalito%20y%203%20Hebras%20Mini">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Estambrón Liso">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Estambrón Liso</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/cSdFSd5NjWenTFjg8" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Estambrón%20Liso">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Estambrón Matizado">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Estambrón Matizado</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/1TX6ChnFQ45UtvpH6" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Estambrón%20Matizado">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Alize Velluto">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Alize Velluto</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/ScQnJhH8c736Ln1g9" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20compra%20de%20la%20web%20Alize%20Velluto">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Estambre Komfy">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Estambre Komfy</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/gBLhPubo7LUH69RQ6" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Estambre%20Komfy">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Estambre Komfy Mini">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Estambre Komfy Mini</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/wA4KEsbx71uC6kZc7" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Estambre%20Fluffy%20Mini">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Estambre Fluffy">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Estambre Fluffy</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/84vipTXrqYaYPKDM6" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Estambre%20Fluffy">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Estambre Favorito">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Estambre Favorito</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/ZnKiHxboLQ4KSByJA" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Estambre%20Favorito">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Estambre Bebito">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Estambre Bebito</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/R1Cz2GTuyGTmXj2p7" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Estambre%20Bebito">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Estambre Cadeneta">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Estambre Cadeneta</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/AsHvM4rRMA7HXySG9" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Estambre%20Cadeneta">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Estambre Super Nene">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Estambre Super Nene</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/QHaDZ7oA4gHeZBbz9" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Estambre%20Super%20Nene">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Hilaza La Abuelita">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Hilaza La Abuelita</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/oqLLJdXeoNDnpdkW8" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Hilaza%20la%20Abuelita">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Hilaza La Abuela N.6">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Hilaza La Abuela N.6</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/pd8fCBYKHtBPrmXr6" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Hilaza%20la%20Abuela%20N.6">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Hilaza Sinfonía">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Hilaza Sinfonía</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/XoqZUFTAuqRGorme9" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Hilaza%20Sinfonía">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Servilletas">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Servilletas</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/8dSVUTJpEgWAptTn7" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Servilletas">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Paleacates">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Paleacates</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/j4hpE4Uvhmzr2wat8" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Paleacates">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Hilo De Hamaca #18">
+  <div class="catalogCard__thumb">🧶</div>
+  <div class="catalogCard__body">
+    <h3>Hilo De Hamaca #18</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/ie9ib28LFeXC5tUE9" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Hilo%20de%20Hamaca">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Hilo Crochet Mercerizado #10">
+  <div class="catalogCard__thumb">🧵</div>
+  <div class="catalogCard__body">
+    <h3>Hilo Crochet Mercerizado #10</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/FEPCc3KyRNgKcBeA8" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Hilo%20Crochet%20Mercerizado">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Hilo Vela De Algodón El Globo">
+  <div class="catalogCard__thumb">🧵</div>
+  <div class="catalogCard__body">
+    <h3>Hilo Vela De Algodón El Globo</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/CDKb1BAH7UFtRELGA" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Hilo%20Vela%20de%20Algodón%20el%20Globo">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Hilo Rayón Iris Vela">
+  <div class="catalogCard__thumb">🧵</div>
+  <div class="catalogCard__body">
+    <h3>Hilo Rayón Iris Vela</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/8PZaUwm7zAnAWeX4A" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Hilo%20Rayón%20Iris%20Vela">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Encaje Plisado">
+  <div class="catalogCard__thumb">🧵</div>
+  <div class="catalogCard__body">
+    <h3>Encaje Plisado</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/qkMnrZPdkXQ2zmii6" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Encaje%20Plisado">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Pintura Textil">
+  <div class="catalogCard__thumb">🧵</div>
+  <div class="catalogCard__body">
+    <h3>Pintura Textil</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/GsorKocBBWHS4KpRA" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Pintura%20Textil">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Pega Diamantina">
+  <div class="catalogCard__thumb">🧵</div>
+  <div class="catalogCard__body">
+    <h3>Pega Diamantina</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/LSkj9fne8bVQ5JLT6" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Pega%20Diamantina">Comprar</a>
+    </div>
+  </div>
+</article>
+
+<article class="catalogCard" data-name="Papel Crepé">
+  <div class="catalogCard__thumb">🧵</div>
+  <div class="catalogCard__body">
+    <h3>Papel Crepé</h3>
+    <p>Ver productos</p>
+    <div class="catalogCard__buttons">
+      <a class="btnSmall btnSmall--ghost" href="https://photos.app.goo.gl/WxYCdEF8unKEjy33A" target="_blank" rel="noopener">Ver</a>
+      <a class="btnSmall btnSmall--wa" target="_blank" rel="noopener" href="https://wa.me/529512871251?text=Hola%20quiero%20comprar%20de%20la%20web%20Papel%20Crepé">Comprar</a>
+    </div>
+  </div>
+</article>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================================
+     OVERLAY DE UBICACIONES
+     Muestra sucursales físicas y acceso a mapas
+====================================================== -->
+<div class="overlay" id="overlayUbicaciones" aria-hidden="true">
+  <div class="overlay__sheet" role="dialog" aria-modal="true" aria-label="Ubicaciones">
+    <header class="overlay__top">
+      <div>
+        <h2 class="overlay__title">Ubicaciones</h2>
+        <p class="overlay__subtitle">Elige una tienda y ábrela en Google Maps</p>
+      </div>
+      <div class="overlay__actions">
+        <button class="iconClose" id="closeUbicaciones" aria-label="Cerrar">✕</button>
+      </div>
+    </header>
+
+    <div class="overlay__content">
+      <div class="locGrid">
+        <article class="locCard">
+          <h3>Sucursal Estambres</h3>
+          <p>Dirección:</p>
+          <p>Módulo N Manzana J Local 10, Central de Abasto, 68090 Oaxaca de Juárez, Oax.</p>
+          <p>Horario:</p>
+          <p>Lunes - Miércoles - Viernes 8:00 am a 5:30 pm</p>
+          <p>Martes - Jueves - Sábado 8:00 am a 4:30 pm</p>
+          <a class="btnSmall btnSmall--ghost" href="https://maps.app.goo.gl/UsVyV5g9kZjDF8pD7" target="_blank" rel="noopener">Ver en Maps</a>
+        </article>
+
+        <article class="locCard">
+          <h3>Sucursal Mercería</h3>
+          <p>Dirección:</p>
+          <p>Módulo N Manzana J Local 10, Central de Abasto, 68090 Oaxaca de Juárez, Oax.</p>
+          <p>Horario:</p>
+          <p>Lunes - Miércoles - Viernes 8:00 am a 5:30 pm</p>
+          <p>Martes - Jueves - Sábado 8:00 am a 4:30 pm</p>
+          <a class="btnSmall btnSmall--ghost" href="https://maps.app.goo.gl/UsVyV5g9kZjDF8pD7" target="_blank" rel="noopener">Ver en Maps</a>
+        </article>
+
+        <article class="locCard">
+          <h3>Sucursal Estambres y Mercería</h3>
+          <p>Dirección:</p>
+          <p>Módulo L local 2 y 4, Central de Abasto, 68090 Oaxaca de Juárez, Oax.</p>
+          <p>Horario:</p>
+          <p>Lunes - Miércoles - Viernes 8:00 am a 5:30 pm</p>
+          <p>Martes - Jueves - Sábado 8:00 am a 4:30 pm</p>
+          <a class="btnSmall btnSmall--ghost" href="https://maps.app.goo.gl/pYBMLHy3JstKP8S2A" target="_blank" rel="noopener">Ver en Maps</a>
+        </article>
+
+        <article class="locCard">
+          <h3>Sucursal Estambres y Mercería</h3>
+          <p>Dirección:</p>
+          <p>Miguel Cabrera 404 Centro, 70122 Oaxaca de Juárez, Oax.</p>
+          <p>Horario:</p>
+          <p>Lunes - Miércoles - Viernes 8:00 am a 5:30 pm</p>
+          <p>Martes - Jueves - Sábado 8:00 am a 4:30 pm</p>
+          <a class="btnSmall btnSmall--ghost" href="https://maps.app.goo.gl/LxmQjjbenYkC631K9" target="_blank" rel="noopener">Ver en Maps</a>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================================
+     SCRIPT DEL SISTEMA
+     Funciones:
+     - Abrir y cerrar overlays
+     - Reiniciar búsqueda
+     - Cerrar con Escape
+     - Cerrar clic fuera del modal
+     - Búsqueda dinámica de catálogos
+====================================================== -->
+<script>
+  (function () {
+    const body = document.body;
+
+    const overlayCatalogos = document.getElementById('overlayCatalogos');
+    const overlayUbicaciones = document.getElementById('overlayUbicaciones');
+
+    const openCatalogos = document.getElementById('openCatalogos');
+    const openUbicaciones = document.getElementById('openUbicaciones');
+
+    const closeCatalogos = document.getElementById('closeCatalogos');
+    const closeUbicaciones = document.getElementById('closeUbicaciones');
+
+    const searchCatalogos = document.getElementById('searchCatalogos');
+    const catalogCards = Array.from(document.querySelectorAll('.catalogCard'));
+
+    function openOverlay(el) {
+      el.classList.add('open');
+      el.setAttribute('aria-hidden', 'false');
+      body.style.overflow = 'hidden';
+    }
+
+    function closeOverlay(el) {
+      el.classList.remove('open');
+      el.setAttribute('aria-hidden', 'true');
+      body.style.overflow = '';
+    }
+
+    openCatalogos?.addEventListener('click', () => {
+      openOverlay(overlayCatalogos);
+      setTimeout(() => searchCatalogos?.focus(), 0);
+    });
+
+    openUbicaciones?.addEventListener('click', () => {
+      openOverlay(overlayUbicaciones);
+    });
+
+    closeCatalogos?.addEventListener('click', () => {
+      closeOverlay(overlayCatalogos);
+      if (searchCatalogos) searchCatalogos.value = '';
+      catalogCards.forEach(card => {
+        card.style.display = '';
+      });
+    });
+
+    closeUbicaciones?.addEventListener('click', () => {
+      closeOverlay(overlayUbicaciones);
+    });
+
+    overlayCatalogos?.addEventListener('click', (e) => {
+      if (e.target === overlayCatalogos) closeCatalogos.click();
+    });
+
+    overlayUbicaciones?.addEventListener('click', (e) => {
+      if (e.target === overlayUbicaciones) closeUbicaciones.click();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+
+      if (overlayCatalogos.classList.contains('open')) {
+        closeCatalogos.click();
+      }
+
+      if (overlayUbicaciones.classList.contains('open')) {
+        closeUbicaciones.click();
+      }
+    });
+
+    searchCatalogos?.addEventListener('input', () => {
+      const q = searchCatalogos.value.trim().toLowerCase();
+
+      catalogCards.forEach(card => {
+        const dataName = (card.getAttribute('data-name') || '').toLowerCase();
+        const title = (card.querySelector('h3')?.textContent || '').toLowerCase();
+        const searchableText = `${dataName} ${title}`;
+
+        card.style.display = searchableText.includes(q) ? '' : 'none';
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
