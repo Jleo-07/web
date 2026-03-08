@@ -100,7 +100,7 @@ a{
   display:flex;
   justify-content:center;
   align-items:center;
-  padding:70px 20px;
+  padding:70px;px 20px;
 }
 
 .logoBar img{
@@ -210,6 +210,64 @@ a{
   font:inherit;
   color:inherit;
   cursor:pointer;
+}
+
+/* =========================
+   MENU CENTRADO EN PC
+========================= */
+@media (min-width: 900px){
+  .nav{
+    overflow:visible;
+    display:flex;
+    justify-content:center;
+  }
+
+  .menu{
+    justify-content:center;
+    width:auto;
+    min-width:auto;
+    margin:0 auto;
+  }
+
+  .nav::after{
+    content:none;
+  }
+}
+
+/* =========================
+   AJUSTES MOVIL
+========================= */
+@media (max-width: 640px){
+  .mainHeader{
+    position:relative;
+  }
+
+  .nav{
+    width:100%;
+  }
+
+  .menu{
+    gap:18px;
+    padding:10px 14px 12px;
+  }
+
+  .menu a,
+  .menu button,
+  .menu .menuBtnLink{
+    font-size:12px;
+  }
+}
+
+@media (max-width: 420px){
+  .menu{
+    gap:16px;
+  }
+
+  .menu a,
+  .menu button,
+  .menu .menuBtnLink{
+    font-size:11px;
+  }
 }
 
 /* ==========================================================
@@ -919,52 +977,4 @@ footer p{
     font-size:18px;
     letter-spacing:2px;
   }
-
-   /* MENU PRINCIPAL */
-.navbar{
-  background:#3b3b3b;
 }
-
-.navbar ul{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:28px;
-  flex-wrap:wrap;
-}
-
-.navbar ul li a{
-  display:block;
-  color:#fff;
-  text-decoration:none;
-  font-weight:bold;
-  padding:18px 0;
-}
-
-/* RESPONSIVE CELULAR */
-@media (max-width:768px){
-
-.navbar ul{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  padding:18px 12px;
-  text-align:center;
-}
-
-.navbar ul li a{
-  padding:10px 6px;
-  font-size:15px;
-}
-
-}
-
-}
-
-
-
-
-
