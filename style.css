@@ -182,8 +182,8 @@ a{
 }
 
 /* item activo */
-.menu a.active{
-  border-bottom:3px solid #fff;
+.menu a.active::after{
+  width:100%;
 }
 
 /* ocultar barra scroll */
@@ -986,4 +986,5 @@ footer p{
     letter-spacing:2px;
   }
 }
+
 
